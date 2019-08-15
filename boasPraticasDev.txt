@@ -1,0 +1,9 @@
+Boas Práticas de Desenvolvimento
+
+1- Não realizar encademento de If's;
+2- Não utilizar valores "chumbados" no código, guarde em uma variavél;
+3- Ao criar arquivo, classe, métodos, variaveis não usar caracteres especiais "!@#$%¨&*()^~ç"
+4- Formatação de datas
+	dd-MM-yyyy --> 01/10/2019
+	dd-MMM-yy
+	

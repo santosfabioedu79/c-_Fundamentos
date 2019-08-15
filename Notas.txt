@@ -1,0 +1,3 @@
+notas do C#
+
+Para somar ele mesmo novamente é usar a soma e atribuição x += ( y * z ) é igual a x = x + ( y * z)
