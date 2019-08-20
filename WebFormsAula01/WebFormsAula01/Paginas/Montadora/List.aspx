@@ -9,55 +9,22 @@
     </div>
     <div class="content">
         <div class="pure-form pure-form-stacked">
-            <table class="pure-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Logo</th>
-                        <th>Montadora</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td></td>
-                        <td>Honda</td>
-                    </tr>
-
-                    <tr>
-                        <td>2</td>
-                        <td></td>
-                        <td>Toyota</td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td></td>
-                        <td>Hyundai</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td></td>
-                        <td>Hyundai</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td></td>
-                        <td>Fiat</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td></td>
-                        <td>GM</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td></td>
-                        <td>Ford</td>
-                    </tr>
-                </tbody>
-            </table>
+            <asp:GridView ID="gridViewMontadora" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowEditing="gridViewMontadora_RowEditing">
+                <AlternatingRowStyle BackColor="White" />
+                <Columns>
+                    <asp:CommandField InsertVisible="False" ShowCancelButton="False" ShowDeleteButton="True" ShowEditButton="True" />
+                </Columns>
+                <EditRowStyle BackColor="#2461BF" />
+                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#EFF3FB" />
+                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+            </asp:GridView>
         </div>
     </div>
 </asp:Content>

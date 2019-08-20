@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Business;
+using Business.Model;
+
 
 namespace WebFormsAula01.Paginas.Montadora
 {
@@ -16,7 +19,15 @@ namespace WebFormsAula01.Paginas.Montadora
 
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {
+            MontadoraBLL montadoraBLL = new MontadoraBLL();
+            montadoraModel model = new montadoraModel();
 
+            model.Nome = txtNomeMontadora.Text;
+            model.Logo = "teste.png";
+
+            montadoraBLL.Salvar(model);
+
+            Response.Redirect("./List.aspx");
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

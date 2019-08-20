@@ -9,8 +9,8 @@ namespace Business.Model
     public class montadoraModel
     {
         public int ID { get; set; }
-        public int Nome { get; set; }
-        public int Logo { get; set; }
+        public string Nome { get; set; }
+        public string Logo { get; set; }
 
     }
 }
