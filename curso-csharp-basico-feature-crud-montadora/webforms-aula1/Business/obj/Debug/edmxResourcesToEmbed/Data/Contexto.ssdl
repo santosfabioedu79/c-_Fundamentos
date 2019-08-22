@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Data.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cilindradas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TamanhoCilindro" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Montadora">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Logo" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoCombustivel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Senha" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Veiculo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTipoCombustivel" Type="int" Nullable="false" />
+    <Property Name="IdCilindradas" Type="int" Nullable="false" />
+    <Property Name="QuantidadePortas" Type="int" Nullable="false" />
+    <Property Name="QuantidadeValvulas" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Veiculo__IdCilin__164452B1">
+    <End Role="Cilindradas" Type="Self.Cilindradas" Multiplicity="1" />
+    <End Role="Veiculo" Type="Self.Veiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cilindradas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Veiculo">
+        <PropertyRef Name="IdCilindradas" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Veiculo__IdTipoC__15502E78">
+    <End Role="TipoCombustivel" Type="Self.TipoCombustivel" Multiplicity="1" />
+    <End Role="Veiculo" Type="Self.Veiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoCombustivel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Veiculo">
+        <PropertyRef Name="IdTipoCombustivel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DataStoreContainer">
+    <EntitySet Name="Cilindradas" EntityType="Self.Cilindradas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cor" EntityType="Self.Cor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Montadora" EntityType="Self.Montadora" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoCombustivel" EntityType="Self.TipoCombustivel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Veiculo" EntityType="Self.Veiculo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Veiculo__IdCilin__164452B1" Association="Self.FK__Veiculo__IdCilin__164452B1">
+      <End Role="Cilindradas" EntitySet="Cilindradas" />
+      <End Role="Veiculo" EntitySet="Veiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Veiculo__IdTipoC__15502E78" Association="Self.FK__Veiculo__IdTipoC__15502E78">
+      <End Role="TipoCombustivel" EntitySet="TipoCombustivel" />
+      <End Role="Veiculo" EntitySet="Veiculo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

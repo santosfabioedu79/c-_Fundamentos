@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Montadora">
+      <EntityTypeMapping TypeName="Data.Montadora">
+        <MappingFragment StoreEntitySet="Montadora">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cilindradas">
+      <EntityTypeMapping TypeName="Data.Cilindradas">
+        <MappingFragment StoreEntitySet="Cilindradas">
+          <ScalarProperty Name="TamanhoCilindro" ColumnName="TamanhoCilindro" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cor">
+      <EntityTypeMapping TypeName="Data.Cor">
+        <MappingFragment StoreEntitySet="Cor">
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoCombustivel">
+      <EntityTypeMapping TypeName="Data.TipoCombustivel">
+        <MappingFragment StoreEntitySet="TipoCombustivel">
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="Data.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Veiculo">
+      <EntityTypeMapping TypeName="Data.Veiculo">
+        <MappingFragment StoreEntitySet="Veiculo">
+          <ScalarProperty Name="QuantidadeValvulas" ColumnName="QuantidadeValvulas" />
+          <ScalarProperty Name="QuantidadePortas" ColumnName="QuantidadePortas" />
+          <ScalarProperty Name="IdCilindradas" ColumnName="IdCilindradas" />
+          <ScalarProperty Name="IdTipoCombustivel" ColumnName="IdTipoCombustivel" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
